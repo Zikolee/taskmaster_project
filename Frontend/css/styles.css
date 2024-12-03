@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  [class*="col-"] {
+    padding: 15px;
+  }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  /* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/* Logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: 'Sen';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+text-align: center;
+color: #32343E;
+}
+p {
+    font-family: 'Sen';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* or 150% */
+text-align: center;
+color: #646982;
+}
+
+h3 {
+  font-family: 'Sen';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  padding: 5px;
+  /* identical to box height */
+  text-align: left;
+  text-transform: uppercase;
+  color: #32343E;
+}
+
+button {
+    background-color: #FF7622;
+    border-radius: 20px;
+    font-size: 18px;
+    color: white;
+    padding: 30px 27px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    background-color: #FF7622;
+    opacity:1;
+  }
+
+  /* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #FF7622;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    background-image: url("Bgasset.png");
+    align-self: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    background-color: #232339;
+    max-width: 100%;
+    height: 449px;;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.text {
+  font-family: 'Sen';
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  line-height: 36px;
+  /* identical to box height */
+  color: #FFFFFF;
+    
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  display: inline-block;
+  height: 50px;
+  box-sizing: border-box;
+  border: 3px grey;
+  background-color: whitesmoke;
+  border-radius: 8px;
+}
+
+#task-description {
+    width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  display: inline-block;
+  height: 120px;
+  box-sizing: border-box;
+  border: 3px grey;
+  background-color: whitesmoke;
+  border-radius: 8px;
+}
+
+
+#logout-container button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#logout-container button:hover {
+    background-color: red;
+}
+
+#add-task-container button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#add-task-container button:hover {
+    background-color: green;
+}
+
+
+/* Task list container */
+#task-list-container {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#fetch-tasks {
+    background-color: #FF7622;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#fetch-tasks:hover {
+    background-color: #FF7622;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    background-color: #fafafa;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.task-info strong {
+    color: #333;
+}
+
+#task-list li button {
+    background-color: #ff7043;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#task-list li button:hover {
+    background-color: #f4511e;
+}
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
